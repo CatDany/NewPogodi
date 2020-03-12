@@ -1,0 +1,15 @@
+﻿MVP:
+
+2. Timer within a game
+3. Account-wide points
+4. Spend points
+6. if Score < 0 -> game over
+7. Stats! (e.g. longest time spent in EXTRA mode, total time spent in extra mode)
+
+To-Do After MVP:
+
+1. Click to move (e.g. cursor is to the left of the catcher -> move left)
+2. Animate movement
+
+Fix:
+make tip animation smoother
