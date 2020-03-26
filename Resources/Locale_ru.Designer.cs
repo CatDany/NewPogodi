@@ -61,7 +61,7 @@ namespace NewPogodi.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ловите зачёты, чтобы оставаться в турбо режиме..
+        ///   Looks up a localized string similar to Ловите яйца, чтобы оставаться в турбо режиме..
         /// </summary>
         internal static string TIP_EXTRA_END {
             get {

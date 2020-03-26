@@ -35,7 +35,7 @@ namespace NewPogodi
             Signatures.Add(new SignatureCatchableFactory(reward, penalty, 1.0, commonSignatureCommonness, Properties.Resources.RegularEgg, scale));
             Signatures.Add(new SignatureCatchableFactory(0, 0, extraSignatureFallRateFactor, extraSignatureCommonnness, Properties.Resources.GoldenEgg, scale * 2) { ActivatesExtra = true });
 
-            buttonNewGame.BackColor = buttonExit.BackColor = Color.FromArgb(200, 255, 255, 255);
+            buttonNewGame.BackColor = buttonAI.BackColor = buttonExit.BackColor = Color.FromArgb(200, 255, 255, 255);
             labelHighscore.BackColor = labelHighscoreDesc.BackColor = Color.FromArgb(150, 255, 255, 255);
             labelHighscore.Text = String.Format(labelHighscore.Tag as string, Properties.Settings.Default.Highscore);
         }
@@ -105,7 +105,7 @@ namespace NewPogodi
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Close();
+           Close();
         }
 
         private void buttonNewGame_Click(object sender, EventArgs e)
@@ -237,6 +237,51 @@ namespace NewPogodi
                     labelTip.Visible = false;
                 }
                 labelScore.Invalidate();
+            }
+        }
+
+        private void buttonAI_Click(object sender, EventArgs e)
+        {
+            timerAI.Enabled = true;
+            buttonNewGame_Click(sender, e);
+        }
+
+        private void timerAI_Tick(object sender, EventArgs e)
+        {
+            if (Game != null)
+            {
+                NPCatchable target = null;
+                double targetTicks = 0;
+                foreach (NPCatchable c in Game.Catchables)
+                {
+                    if (c.Dead)
+                        continue;
+
+                    double fallDistancePerTick = (int)(c.FallRate * c.FallRateFactor) / Game.TickRate;
+                    double fallDistanceLeft = Game.Height - Game.Catcher.Height - c.YPosition;
+                    double fallTicks = fallDistanceLeft / fallDistancePerTick;
+                    double moveTicks = (double)timerAI.Interval / Game.TickRate;
+
+                    if (target == null
+                        || (c.Factory is SignatureCatchableFactory && ((SignatureCatchableFactory)c.Factory).ActivatesExtra)
+                        || targetTicks > fallTicks + moveTicks)
+                    {
+                        targetTicks = fallTicks + moveTicks;
+                        target = c;
+                    }
+                }
+
+                if (target != null)
+                {
+                    if (Game.Catcher.XPosition > target.XPosition)
+                    {
+                        handleKeyDown(sender, new KeyEventArgs(Keys.Left));
+                    }
+                    else if (Game.Catcher.XPosition + Game.Catcher.Width < target.XPosition)
+                    {
+                        handleKeyDown(sender, new KeyEventArgs(Keys.Right));
+                    }
+                }
             }
         }
     }

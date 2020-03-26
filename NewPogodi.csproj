@@ -116,13 +116,6 @@
     <None Include="Resources\GoldenEgg.png" />
     <None Include="Resources\RegularEgg.png" />
     <None Include="Resources\igra-nu-pogodi.png" />
-    <Content Include="Resources\Signatures\Anatolyev.png" />
-    <Content Include="Resources\Signatures\Andreeva.png" />
-    <Content Include="Resources\Signatures\Bobrovskih.png" />
-    <Content Include="Resources\Signatures\Bogatov.png" />
-    <Content Include="Resources\Signatures\Borodina.png" />
-    <Content Include="Resources\Signatures\Trotsenko.png" />
-    <Content Include="Resources\Signatures\Yanishevskaya.png" />
     <None Include="Resources\omstu.jpg" />
     <Content Include="TODO--NOTES.txt" />
   </ItemGroup>

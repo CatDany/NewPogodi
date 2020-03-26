@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TIP_EXTRA_END" xml:space="preserve">
-    <value>Ловите зачёты, чтобы оставаться в турбо режиме.</value>
+    <value>Ловите яйца, чтобы оставаться в турбо режиме.</value>
     <comment>Конец режима "extra"</comment>
   </data>
   <data name="TIP_EXTRA_START" xml:space="preserve">

@@ -124,35 +124,11 @@
   <data name="GoldenEgg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoldenEgg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Borodina" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\borodina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bogatov" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\bogatov.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RegularEgg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RegularEgg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Anatolyev" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\anatolyev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="77667e00565d4ca639c52fd084c62f4dd6b2abc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\77667e00565d4ca639c52fd084c62f4dd6b2abc3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Trotsenko" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\trotsenko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bobrovskih" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\bobrovskih.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Andreeva" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\andreeva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="omstu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\omstu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Yanishevskaya" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signatures\yanishevskaya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="igra-nu-pogodi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\igra-nu-pogodi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

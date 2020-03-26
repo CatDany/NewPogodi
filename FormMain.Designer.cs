@@ -34,6 +34,7 @@ namespace NewPogodi
             this.panelGame = new System.Windows.Forms.Panel();
             this.labelTip = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
+            this.pictureCatcher = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.timerAnimation = new System.Windows.Forms.Timer(this.components);
             this.panelMainMenu = new System.Windows.Forms.Panel();
@@ -41,10 +42,11 @@ namespace NewPogodi
             this.labelHighscore = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonNewGame = new System.Windows.Forms.Button();
-            this.pictureCatcher = new System.Windows.Forms.PictureBox();
+            this.buttonAI = new System.Windows.Forms.Button();
+            this.timerAI = new System.Windows.Forms.Timer(this.components);
             this.panelGame.SuspendLayout();
-            this.panelMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCatcher)).BeginInit();
+            this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGame
@@ -88,6 +90,16 @@ namespace NewPogodi
             this.labelScore.Text = "Тут будет показан счёт :)";
             this.labelScore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureCatcher
+            // 
+            this.pictureCatcher.Image = global::NewPogodi.Properties.Resources.igra_nu_pogodi;
+            this.pictureCatcher.Location = new System.Drawing.Point(0, 457);
+            this.pictureCatcher.Name = "pictureCatcher";
+            this.pictureCatcher.Size = new System.Drawing.Size(193, 176);
+            this.pictureCatcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCatcher.TabIndex = 0;
+            this.pictureCatcher.TabStop = false;
+            // 
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
@@ -109,6 +121,7 @@ namespace NewPogodi
             this.panelMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMainMenu.Controls.Add(this.labelHighscoreDesc);
             this.panelMainMenu.Controls.Add(this.labelHighscore);
+            this.panelMainMenu.Controls.Add(this.buttonAI);
             this.panelMainMenu.Controls.Add(this.buttonExit);
             this.panelMainMenu.Controls.Add(this.buttonNewGame);
             this.panelMainMenu.Location = new System.Drawing.Point(12, 12);
@@ -145,9 +158,9 @@ namespace NewPogodi
             this.buttonExit.BackColor = System.Drawing.Color.Transparent;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(222, 398);
+            this.buttonExit.Location = new System.Drawing.Point(222, 399);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(312, 44);
+            this.buttonExit.Size = new System.Drawing.Size(312, 43);
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Выход";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -160,29 +173,36 @@ namespace NewPogodi
             this.buttonNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewGame.Location = new System.Drawing.Point(222, 225);
             this.buttonNewGame.Name = "buttonNewGame";
-            this.buttonNewGame.Size = new System.Drawing.Size(312, 176);
+            this.buttonNewGame.Size = new System.Drawing.Size(312, 135);
             this.buttonNewGame.TabIndex = 0;
             this.buttonNewGame.Text = "Играть!";
             this.buttonNewGame.UseVisualStyleBackColor = false;
             this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
-            // pictureCatcher
+            // buttonAI
             // 
-            this.pictureCatcher.Image = global::NewPogodi.Properties.Resources.igra_nu_pogodi;
-            this.pictureCatcher.Location = new System.Drawing.Point(0, 457);
-            this.pictureCatcher.Name = "pictureCatcher";
-            this.pictureCatcher.Size = new System.Drawing.Size(193, 176);
-            this.pictureCatcher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureCatcher.TabIndex = 0;
-            this.pictureCatcher.TabStop = false;
+            this.buttonAI.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAI.Location = new System.Drawing.Point(222, 356);
+            this.buttonAI.Name = "buttonAI";
+            this.buttonAI.Size = new System.Drawing.Size(312, 45);
+            this.buttonAI.TabIndex = 1;
+            this.buttonAI.Text = "Наблюдать за ИИ";
+            this.buttonAI.UseVisualStyleBackColor = false;
+            this.buttonAI.Click += new System.EventHandler(this.buttonAI_Click);
+            // 
+            // timerAI
+            // 
+            this.timerAI.Tick += new System.EventHandler(this.timerAI_Tick);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 704);
-            this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelMainMenu);
+            this.Controls.Add(this.panelGame);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
@@ -190,8 +210,8 @@ namespace NewPogodi
             this.Text = " ";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.handleKeyDown);
             this.panelGame.ResumeLayout(false);
-            this.panelMainMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureCatcher)).EndInit();
+            this.panelMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -209,6 +229,8 @@ namespace NewPogodi
         private System.Windows.Forms.Label labelTip;
         private System.Windows.Forms.Label labelHighscore;
         private System.Windows.Forms.Label labelHighscoreDesc;
+        private System.Windows.Forms.Button buttonAI;
+        private System.Windows.Forms.Timer timerAI;
     }
 }
 

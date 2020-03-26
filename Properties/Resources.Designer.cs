@@ -63,66 +63,6 @@ namespace NewPogodi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _77667e00565d4ca639c52fd084c62f4dd6b2abc3 {
-            get {
-                object obj = ResourceManager.GetObject("77667e00565d4ca639c52fd084c62f4dd6b2abc3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Anatolyev {
-            get {
-                object obj = ResourceManager.GetObject("Anatolyev", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Andreeva {
-            get {
-                object obj = ResourceManager.GetObject("Andreeva", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bobrovskih {
-            get {
-                object obj = ResourceManager.GetObject("Bobrovskih", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bogatov {
-            get {
-                object obj = ResourceManager.GetObject("Bogatov", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Borodina {
-            get {
-                object obj = ResourceManager.GetObject("Borodina", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap GoldenEgg {
             get {
                 object obj = ResourceManager.GetObject("GoldenEgg", resourceCulture);
@@ -166,26 +106,6 @@ namespace NewPogodi.Properties {
         internal static System.Drawing.Bitmap RegularEgg {
             get {
                 object obj = ResourceManager.GetObject("RegularEgg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Trotsenko {
-            get {
-                object obj = ResourceManager.GetObject("Trotsenko", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Yanishevskaya {
-            get {
-                object obj = ResourceManager.GetObject("Yanishevskaya", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
