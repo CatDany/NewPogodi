@@ -40,9 +40,9 @@ namespace NewPogodi
             this.panelMainMenu = new System.Windows.Forms.Panel();
             this.labelHighscoreDesc = new System.Windows.Forms.Label();
             this.labelHighscore = new System.Windows.Forms.Label();
+            this.buttonAI = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonNewGame = new System.Windows.Forms.Button();
-            this.buttonAI = new System.Windows.Forms.Button();
             this.timerAI = new System.Windows.Forms.Timer(this.components);
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCatcher)).BeginInit();
@@ -153,6 +153,19 @@ namespace NewPogodi
             this.labelHighscore.Text = "Рекорд: 0";
             this.labelHighscore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonAI
+            // 
+            this.buttonAI.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAI.Location = new System.Drawing.Point(222, 356);
+            this.buttonAI.Name = "buttonAI";
+            this.buttonAI.Size = new System.Drawing.Size(312, 45);
+            this.buttonAI.TabIndex = 1;
+            this.buttonAI.Text = "Наблюдать за ИИ";
+            this.buttonAI.UseVisualStyleBackColor = false;
+            this.buttonAI.Click += new System.EventHandler(this.buttonAI_Click);
+            // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.Transparent;
@@ -179,19 +192,6 @@ namespace NewPogodi
             this.buttonNewGame.UseVisualStyleBackColor = false;
             this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
-            // buttonAI
-            // 
-            this.buttonAI.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAI.Location = new System.Drawing.Point(222, 356);
-            this.buttonAI.Name = "buttonAI";
-            this.buttonAI.Size = new System.Drawing.Size(312, 45);
-            this.buttonAI.TabIndex = 1;
-            this.buttonAI.Text = "Наблюдать за ИИ";
-            this.buttonAI.UseVisualStyleBackColor = false;
-            this.buttonAI.Click += new System.EventHandler(this.buttonAI_Click);
-            // 
             // timerAI
             // 
             this.timerAI.Tick += new System.EventHandler(this.timerAI_Tick);
@@ -201,8 +201,8 @@ namespace NewPogodi
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 704);
-            this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panelGame);
+            this.Controls.Add(this.panelMainMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
