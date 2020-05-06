@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace NewPogodi
         public FormMain()
         {
             InitializeComponent();
+
             gameTimer.Interval = Int32.Parse(Resources.Constants.TICK_INTERVAL);
 
             double scale = 0.3;
@@ -51,6 +53,12 @@ namespace NewPogodi
                 else if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
                 {
                     Game.Catcher.Move(+Game.Catcher.Width, 0);
+                }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    panelMainMenu.Visible = true;
+                    panelGame.Visible = false;
+                    Game = null;
                 }
             }
         }
@@ -141,10 +149,9 @@ namespace NewPogodi
 
         private void panelGame_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
             foreach (NPCatchable c in Game.Catchables)
             {
-                g.DrawImage((c.Factory as SignatureCatchableFactory).Bitmap, c.XPosition, c.YPosition);
+                e.Graphics.DrawImage((c.Factory as SignatureCatchableFactory).Bitmap, c.XPosition, c.YPosition);
             }
         }
 

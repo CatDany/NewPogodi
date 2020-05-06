@@ -135,7 +135,8 @@ namespace NewPogodi
             }
 
             // Проверка на коллизии
-            Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition, Catcher.Width, Catcher.Height);
+            Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition, Catcher.Width, Catcher.Height / 10);
+            //Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition, Catcher.Width, Catcher.Height);
             foreach (NPCatchable c in Catchables)
             {
                 // Если NPCatchable вышел за пределы игровой зоны
@@ -150,7 +151,8 @@ namespace NewPogodi
                 }
 
                 // Если NPCatchable столкнулся с NPCatcher
-                Rectangle catchableRect = new Rectangle(c.XPosition, c.YPosition, c.Width, c.Height);
+                Rectangle catchableRect = new Rectangle(c.XPosition, c.YPosition + c.Height - c.Height / 10, c.Width, c.Height / 10);
+                //Rectangle catchableRect = new Rectangle(c.XPosition, c.YPosition, c.Width, c.Height);
                 if (catchableRect.IntersectsWith(catcherRect))
                 {
                     c.Dead = true;
