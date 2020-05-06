@@ -135,7 +135,7 @@ namespace NewPogodi
             }
 
             // Проверка на коллизии
-            Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition, Catcher.Width, Catcher.Height / 10);
+            Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition + Catcher.Height / 2, Catcher.Width, Catcher.Height / 10);
             //Rectangle catcherRect = new Rectangle(Catcher.XPosition, Catcher.YPosition, Catcher.Width, Catcher.Height);
             foreach (NPCatchable c in Catchables)
             {

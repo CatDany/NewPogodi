@@ -151,7 +151,7 @@ namespace NewPogodi.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 50.
+        ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string PENALTY {
             get {

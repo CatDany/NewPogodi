@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +25,7 @@ namespace NewPogodi
 
         public FormMain()
         {
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             InitializeComponent();
 
             gameTimer.Interval = Int32.Parse(Resources.Constants.TICK_INTERVAL);
@@ -42,6 +45,15 @@ namespace NewPogodi
             labelHighscore.Text = String.Format(labelHighscore.Tag as string, Properties.Settings.Default.Highscore);
         }
 
+        /// <summary>
+        /// Ориентация волка (1 = вправо, -1 = влево)
+        /// </summary>
+        private int orientation = 1;
+        /// <summary>
+        /// Если true, волк повернется при следующем обновлении, а флаг вернется к исходному значению (false).
+        /// </summary>
+        private bool flipOrientation = false;
+
         private void handleKeyDown(object sender, KeyEventArgs e)
         {
             if (Game != null)
@@ -49,10 +61,20 @@ namespace NewPogodi
                 if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
                 {
                     Game.Catcher.Move(-Game.Catcher.Width, 0);
+                    if (orientation > 0)
+                    {
+                        orientation = -1;
+                        flipOrientation = true;
+                    }
                 }
                 else if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
                 {
                     Game.Catcher.Move(+Game.Catcher.Width, 0);
+                    if (orientation < 0)
+                    {
+                        orientation = 1;
+                        flipOrientation = true;
+                    }
                 }
                 else if (e.KeyCode == Keys.Escape)
                 {
@@ -70,6 +92,11 @@ namespace NewPogodi
                 Game.tick();
 
                 pictureCatcher.Location = new Point(Game.Catcher.XPosition, Game.Catcher.YPosition);
+                if (flipOrientation)
+                {
+                    flipOrientation = false;
+                    pictureCatcher.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
 
                 if (Game.CurrentScore != 0 || !labelScore.Tag.Equals("Untouched"))
                 {
@@ -151,7 +178,15 @@ namespace NewPogodi
         {
             foreach (NPCatchable c in Game.Catchables)
             {
-                e.Graphics.DrawImage((c.Factory as SignatureCatchableFactory).Bitmap, c.XPosition, c.YPosition);
+                Bitmap cbm = (c.Factory as SignatureCatchableFactory).Bitmap;
+                ImageAttributes imgAttr = new ImageAttributes();
+                if (c.YPosition + c.Height > Game.Catcher.YPosition + Game.Catcher.Height / 2)
+                {
+                    ColorMatrix matrix = new ColorMatrix();
+                    matrix.Matrix33 = 1.0f - (c.YPosition + c.Height - (Game.Catcher.YPosition + Game.Catcher.Height / 2)) / (float)(Game.Height - Game.Catcher.YPosition + Game.Catcher.Height / 2) * 2;
+                    imgAttr.SetColorMatrix(matrix);
+                }
+                e.Graphics.DrawImage(cbm, new Rectangle(c.XPosition, c.YPosition, cbm.Width, cbm.Height), 0, 0, cbm.Width, cbm.Height, GraphicsUnit.Pixel, imgAttr);
             }
         }
 

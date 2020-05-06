@@ -158,7 +158,7 @@
     <comment>Максимальный размер шрифта счёта (для анимации) в единицах размера шрифта (pt)</comment>
   </data>
   <data name="PENALTY" xml:space="preserve">
-    <value>50</value>
+    <value>0</value>
     <comment>Кол-во очков, отнимаемых за пропуск</comment>
   </data>
   <data name="REWARD" xml:space="preserve">
